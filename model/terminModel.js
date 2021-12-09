@@ -1,8 +1,8 @@
 
 
 const mongoose = require("mongoose")
-const { schema } = mongoose
-const termin = new schema(
+const { Schema } = mongoose
+const termin = new Schema(
     {
         time: Number,
         date: String,
