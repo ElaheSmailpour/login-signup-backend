@@ -66,3 +66,24 @@ exports.buchen = async (req, res, next) => {
     else
     res.send(401)
 }
+//getTerminList
+
+
+exports.getTerminList = async(req, res, next) => {
+    const phone = req.params.phone;
+  const findUser= await user.findOne({phone})
+  if(!findUser)
+  {
+      return res.status(400).send("diese telefonnummber hat noch nicht einen termingebucht!")
+  }
+ const terminList=await terminModel.find({userId:findUser._id})
+    res.send(terminList)
+}
+//terminCancel
+
+exports.terminRemove = async(req, res, next) => {
+    const terminid = req.params.terminId;
+  const 
+  terminRemove=await terminModel.findByIdAndRemove(terminid)
+  res.send(200)
+}
