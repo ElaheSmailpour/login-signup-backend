@@ -10,6 +10,11 @@ const termin = new Schema(
             type:mongoose.Schema.Types.ObjectId,
             ref:"userPraxis"
         },
+        behandlungen:{
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"behandlungen"
+           }
+    
     }
 )
 

@@ -7,6 +7,8 @@ const app = express();
 
 const verbindeDB = require("./mongo-db");
 const terminRouter = require('./routes/terminRouter');
+const adminRouter = require('./routes/adminRouer');
+const userLoginRouter = require('./routes/userLogin');
 verbindeDB()
 
 app.use(express.json());
@@ -18,6 +20,8 @@ app.use(cors)
 
 
 app.use(express.static('public'))
+app.use("/register",userLoginRouter)
+app.use("/admin",adminRouter)
 app.use("/termin", terminRouter)
 app.get('*', (req, res, next) => {
     res.status(404).send("Diesen Pfad gibt es nicht")
