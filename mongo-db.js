@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 
 
-let addressString = process.env.mongo || "mongodb://localhost:27017/praxisYas";
+let addressString = process.env.mongo || "mongodb://localhost:27017/Testpraxis2";
 let optionen = { useNewUrlParser: true, useUnifiedTopology: true };
 
 const verbindeDB = () => {

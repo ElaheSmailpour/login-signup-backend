@@ -3,8 +3,8 @@ const User = require("../model/userModel")
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const validateRegister = require("../user.schema")
-const { response } = require("express");
 
+//login
 exports.userLogin = async (req, res, next) => {
     let loginuser = req.body
 
@@ -46,7 +46,7 @@ exports.userLogin = async (req, res, next) => {
 
 
 
-//post-signup
+//signup
 
 exports.getSignup = async (req, res, next) => {
 
